@@ -1,0 +1,9 @@
+<!doctype html><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Passcode maker</title>
+<body style="font-family:sans-serif;max-width:480px;margin:40px auto;padding:0 16px">
+<h2>Make a new passcode</h2>
+<p>Type 4 digits, then copy the result into <code>js/config.js</code> as <code>passcodeHash</code>.</p>
+<input id="c" maxlength="4" inputmode="numeric" placeholder="0904" style="font-size:2rem;width:7em;text-align:center">
+<p>passcodeHash: <b id="o" style="font-size:1.2rem"></b></p>
+<script src="../js/hash.js"></script><script src="../js/config.js"></script>
+<script>c.oninput=()=>{o.textContent=c.value.length===4?hashCode(GIFT.salt+c.value):''}</script>
