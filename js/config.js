@@ -29,18 +29,18 @@ window.GIFT = {
      (.jpg .jpeg .png .webp all work automatically).
      Write a caption between the quotes whenever you want one.            */
   photos: [
-    { file: "photo-01", caption: "" },
-    { file: "photo-02", caption: "" },
-    { file: "photo-03", caption: "" },
-    { file: "photo-04", caption: "" },
-    { file: "photo-05", caption: "" },
-    { file: "photo-06", caption: "" },
-    { file: "photo-07", caption: "" },
-    { file: "photo-08", caption: "" },
-    { file: "photo-09", caption: "" },
-    { file: "photo-10", caption: "" },
-    { file: "photo-11", caption: "" },
-    { file: "photo-12", caption: "" }
+    { file: "IMG_20261107_220442_427_2.jpg", caption: "" },
+    { file: "IMG_20261107_220443_260_9.jpg", caption: "" },
+    { file: "IMG_20261107_220450_882.jpg", caption: "" },
+    { file: "IMG_20261107_220456_121.jpg", caption: "" },
+    { file: "IMG_20261107_220503_066.jpg", caption: "" },
+    { file: "IMG_20261107_220507_728.jpg", caption: "" },
+    { file: "IMG_20261107_220509_110.jpg", caption: "" },
+    { file: "IMG_20261107_220510_726.jpg", caption: "" },
+    { file: "IMG_20261107_220512_073.jpg", caption: "" },
+    { file: "IMG_20261107_220513_353.jpg", caption: "" },
+    { file: "IMG_20261107_220514_547.jpg", caption: "" },
+    { file: "IMG_20261107_220516_638.jpg", caption: "" }
   ],
 
   /* While true, empty frames show for photos/videos you haven't uploaded yet.
