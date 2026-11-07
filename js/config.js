@@ -51,8 +51,8 @@ window.GIFT = {
   /* ---------- Videos ----------
      Upload to  assets/videos/  as  video-01.mp4  and  video-02.mp4  */
   videos: [
-    { file: "video-01", title: "Moment one", caption: "" },
-    { file: "video-02", title: "Moment two", caption: "" }
+    { file: "Messenger_creation_70D0B9AA-4118-44A8-AA58-2FA32AEAF44A.mp4", title: "Moment one", caption: "" },
+    { file: "VID_20261107_082005_115.mp4", title: "Moment two", caption: "" }
   ],
 
   /* ---------- Music (optional) ----------
