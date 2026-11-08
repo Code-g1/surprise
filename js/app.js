@@ -213,29 +213,38 @@
      ===================================================== */
   var IMG_EXT = ['.jpg', '.jpeg', '.png', '.webp', '.JPG', '.JPEG', '.PNG'];
   var VID_EXT = ['.mp4', '.webm', '.MP4', '.mov', '.MOV'];
+  /* Accepts "photo-01" (looked up in the assets folder, endings tried automatically),
+     "IMG_123.jpg" (exact file in the assets folder) or "surprise/IMG_123.jpg" (any path from the site root). */
+  var HAS_EXT = /\.(jpe?g|png|webp|gif|mp4|webm|mov)$/i;
+  function candidates(file, folder, exts) {
+    file = String(file).replace(/^\.?\//, '');
+    var base = file.indexOf('/') >= 0 ? file : folder + file;
+    if (HAS_EXT.test(base)) return [base];
+    return exts.map(function (e) { return base + e; });
+  }
   function probeImage(file) {
     return new Promise(function (res) {
-      var i = 0;
+      var list = candidates(file, 'assets/photos/', IMG_EXT), i = 0;
       (function next() {
-        if (i >= IMG_EXT.length) return res(null);
+        if (i >= list.length) return res(null);
         var im = new Image();
         im.onload = function () { res({ src: im.src, w: im.naturalWidth, h: im.naturalHeight }); };
         im.onerror = function () { i++; next(); };
-        im.src = 'assets/photos/' + file + IMG_EXT[i];
+        im.src = list[i];
       })();
     });
   }
   function probeVideo(file) {
     return new Promise(function (res) {
-      var i = 0, done = false;
+      var list = candidates(file, 'assets/videos/', VID_EXT), i = 0, done = false;
       setTimeout(function () { if (!done) { done = true; res(null); } }, 9000);
       (function next() {
         if (done) return;
-        if (i >= VID_EXT.length) { done = true; return res(null); }
+        if (i >= list.length) { done = true; return res(null); }
         var v = document.createElement('video'); v.preload = 'metadata'; v.muted = true;
-        v.onloadedmetadata = function () { if (!done) { done = true; res({ src: 'assets/videos/' + file + VID_EXT[i] }); } };
+        v.onloadedmetadata = function () { if (!done) { done = true; res({ src: list[i] }); } };
         v.onerror = function () { i++; next(); };
-        v.src = 'assets/videos/' + file + VID_EXT[i];
+        v.src = list[i];
       })();
     });
   }
