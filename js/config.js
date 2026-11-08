@@ -53,18 +53,18 @@ window.GIFT = {
      Upload to  assets/photos/  as  photo-01.jpg … photo-12.jpg
      (.jpeg .png .webp also work). Write a caption between the quotes, or leave "". */
   photos: [
-    { file: "photo-01", caption: "" },
-    { file: "photo-02", caption: "" },
-    { file: "photo-03", caption: "" },
-    { file: "photo-04", caption: "" },
-    { file: "photo-05", caption: "" },
-    { file: "photo-06", caption: "" },
-    { file: "photo-07", caption: "" },
-    { file: "photo-08", caption: "" },
-    { file: "photo-09", caption: "" },
-    { file: "photo-10", caption: "" },
-    { file: "photo-11", caption: "" },
-    { file: "photo-12", caption: "" }
+    { file: "surprise/IMG_20261107_220503_066.jpg", caption: "" },
+    { file: "surprise/IMG_20261107_220512_073.jpg", caption: "" },
+    { file: "surprise/IMG_20261107_220509_110.jpg", caption: "" },
+    { file: "surprise/IMG_20261107_220513_353.jpg", caption: "" },
+    { file: "surprise/IMG_20261107_220510_726.jpg", caption: "" },
+    { file: "surprise/IMG_20261107_220513_353.jpg", caption: "" },
+    { file: "surprise/IMG_20261107_220443_260_9.jpg", caption: "" },
+    { file: "surprise/IMG_20261107_220516_638.jpg", caption: "" },
+    { file: "surprise/IMG_20261107_220456_121.jpg", caption: "" },
+    { file: "surprise/IMG_20261107_220450_882.jpg", caption: "" },
+    { file: "surprise/IMG_20261107_220442_427_2.jpg", caption: "" },
+    { file: "surprise/IMG_20261107_220514_547.jpg", caption: "" }
   ],
 
   /* true = empty frames for files you haven't uploaded yet (good while testing).
@@ -73,8 +73,8 @@ window.GIFT = {
 
   /* ---------- Videos: upload to assets/videos/ as video-01.mp4 and video-02.mp4 ---------- */
   videos: [
-    { file: "video-01", title: "Moment one", caption: "" },
-    { file: "video-02", title: "Moment two", caption: "" }
+    { file: "surprise/Messenger_creation_70D0B9AA-4118-44A8-AA58-2FA32AEAF44A.mp4", title: "Moment one", caption: "" },
+    { file: "surprise/VID_20261107_082005_115.mp4", title: "Moment two", caption: "" }
   ],
 
   /* ---------- Music (optional): upload  assets/music/song.mp3 ---------- */
