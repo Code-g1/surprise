@@ -3,171 +3,133 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#fbe6d2">
+<meta name="theme-color" content="#070617">
 <meta name="robots" content="noindex, nofollow">
-<title>For You 💌</title>
+<title>A universe for you ✦</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Dancing+Script:wght@600;700&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="locked-scroll">
+<body>
 
-<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
-  <defs>
-    <filter id="sketch" x="-5%" y="-5%" width="110%" height="110%">
-      <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="4" result="n"/>
-      <feDisplacementMap in="SourceGraphic" in2="n" scale="3.2"/>
-    </filter>
-    <pattern id="hatch" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(40)">
-      <line x1="0" y1="0" x2="0" y2="7" stroke="#d9456f" stroke-width="1.1" opacity=".45"/>
-    </pattern>
-    <linearGradient id="lockg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffc79a"/><stop offset="1" stop-color="#f08c6e"/></linearGradient>
-  </defs>
-</svg>
+<canvas id="sky" aria-hidden="true"></canvas>
+<div class="aurora" aria-hidden="true"></div>
 
-<canvas id="petals" aria-hidden="true"></canvas>
-
-<!-- ============ 1. GIFT ============ -->
-<section id="screen-gift" class="screen active">
-  <button id="gift-btn" class="gift-btn" aria-label="Tap to open your gift">
-    <svg id="gift" viewBox="0 0 220 220" width="220" height="220" aria-hidden="true">
-      <g filter="url(#sketch)" stroke="#c23a62" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
-        <g id="gift-body">
-          <rect x="44" y="104" width="132" height="86" rx="6" fill="#fbc3d3"/>
-          <rect x="44" y="104" width="132" height="86" rx="6" fill="url(#hatch)" stroke="none"/>
-          <rect x="99" y="104" width="22" height="86" fill="#ffe3ec"/>
-        </g>
-        <g id="gift-lid">
-          <rect x="36" y="78" width="148" height="30" rx="6" fill="#f68fb1"/>
-          <rect x="36" y="78" width="148" height="30" rx="6" fill="url(#hatch)" stroke="none"/>
-          <rect x="99" y="78" width="22" height="30" fill="#ffe3ec"/>
-          <path d="M110 78 C 84 40, 52 52, 70 74 C 80 84, 100 80, 110 78 Z" fill="#fbc3d3"/>
-          <path d="M110 78 C 136 40, 168 52, 150 74 C 140 84, 120 80, 110 78 Z" fill="#fbc3d3"/>
-          <circle cx="110" cy="76" r="9" fill="#f68fb1"/>
-        </g>
-      </g>
-      <g class="gift-sparks" fill="#e8758f">
-        <path d="M24 60 l3 8 8 3 -8 3 -3 8 -3 -8 -8 -3 8 -3z"/>
-        <path d="M196 48 l2.5 6 6 2.5 -6 2.5 -2.5 6 -2.5 -6 -6 -2.5 6 -2.5z"/>
-        <path d="M188 150 l2 5 5 2 -5 2 -2 5 -2 -5 -5 -2 5 -2z"/>
-      </g>
-    </svg>
-    <span class="gift-title script" id="gift-title">For you, my love.</span>
-    <span class="gift-tap">tap to open</span>
+<!-- ===== 1. INTRO ===== -->
+<section id="s-intro" class="screen active">
+  <button id="start-star" class="start-star" aria-label="Tap the star to begin">
+    <svg viewBox="0 0 100 100" width="96" height="96"><path d="M50 4 L58 42 L96 50 L58 58 L50 96 L42 58 L4 50 L42 42 Z" fill="#fff6e0"/></svg>
+    <i></i><i></i>
   </button>
+  <p id="start-txt" class="start-txt">tap the star</p>
+  <p id="intro-line" class="intro-line"></p>
 </section>
 
-<!-- ============ 2. INTRO ============ -->
-<section id="screen-intro" class="screen">
-  <div class="intro-wrap">
-    <h1 class="script big">From me to you.</h1>
-    <p class="sub serif">This is how much I love you.</p>
-    <svg class="intro-art" viewBox="0 0 220 170" aria-hidden="true">
-      <g filter="url(#sketch)" stroke="#b3304f" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round">
-        <path d="M95 150 C 20 100, 22 40, 66 36 C 84 34, 95 46, 98 58 C 103 44, 118 32, 136 38 C 176 52, 160 110, 95 150Z" fill="#f9a9be" transform="rotate(-8 95 95)"/>
-        <path d="M150 150 C 108 122, 106 88, 130 86 C 142 85, 148 92, 150 98 C 153 90, 162 83, 172 87 C 194 96, 186 128, 150 150Z" fill="#fcd2b4" transform="rotate(10 150 120)"/>
-      </g>
-      <g fill="none" stroke="#a9805f" stroke-width="2" stroke-linecap="round">
-        <path d="M22 160 C 30 130, 20 112, 34 98"/><path d="M30 130 c-10 -2 -14 -10 -12 -16 c8 0 14 6 12 16z" fill="#cfd8b0"/>
-        <path d="M200 160 C 194 140, 204 124, 196 108"/><path d="M198 134 c10 -2 14 -10 12 -16 c-8 0 -14 6 -12 16z" fill="#cfd8b0"/>
-      </g>
-      <g fill="#e8758f"><path d="M110 14 l3 8 8 3 -8 3 -3 8 -3 -8 -8 -3 8 -3z"/><path d="M176 22 l2 5 5 2 -5 2 -2 5 -2 -5 -5 -2 5 -2z" opacity=".7"/></g>
-    </svg>
-    <div class="quote-card" id="quote-card" aria-live="polite"><p id="quote-text" class="quote"></p></div>
-    <div class="dots" id="quote-dots"></div>
-    <button class="soft-btn" id="to-lock">Open my heart 🔒</button>
+<!-- ===== 2. LOCK ===== -->
+<section id="s-lock" class="screen">
+  <p class="mission">MISSION: <b id="m-name">DALLEIII</b> ✦ CLEARANCE: ONLY YOU</p>
+  <div class="orb" id="orb"><i></i><i></i><i></i><b></b></div>
+  <h2 class="script lock-title" id="lock-title">Enter the launch code</h2>
+  <div class="slots" id="slots"><i></i><i></i><i></i><i></i></div>
+  <p class="lock-msg" id="lock-msg">&nbsp;</p>
+  <div class="keypad" id="keypad">
+    <button data-k="1">1</button><button data-k="2">2</button><button data-k="3">3</button>
+    <button data-k="4">4</button><button data-k="5">5</button><button data-k="6">6</button>
+    <button data-k="7">7</button><button data-k="8">8</button><button data-k="9">9</button>
+    <span></span><button data-k="0">0</button><button data-k="clear" class="clear">clear</button>
   </div>
 </section>
 
-<!-- ============ 3. LOCK ============ -->
-<section id="screen-lock" class="screen">
-  <div class="lock-wrap" id="lock-wrap">
-    <svg id="padlock" viewBox="0 0 100 110" width="84" height="92" aria-hidden="true">
-      <path id="shackle" d="M32 44 V 30 a18 18 0 0 1 36 0 V 44" fill="none" stroke="#b97a5b" stroke-width="7" stroke-linecap="round"/>
-      <path d="M50 104 C 8 74, 6 40, 32 36 C 42 34, 49 40, 50 46 C 51 40, 58 34, 68 36 C 94 40, 92 74, 50 104Z" fill="url(#lockg)" stroke="#d27a5a" stroke-width="2"/>
-      <circle cx="50" cy="66" r="6" fill="#8e3b2f" opacity=".85"/><rect x="47.5" y="68" width="5" height="14" rx="2.5" fill="#8e3b2f" opacity=".85"/>
-    </svg>
-    <h2 class="script" id="lock-title">Enter Passkey</h2>
-    <div class="pin-dots" id="pin-dots"><i></i><i></i><i></i><i></i></div>
-    <p class="lock-msg" id="lock-msg">&nbsp;</p>
-    <div class="keypad" id="keypad">
-      <button data-k="1">1</button><button data-k="2">2</button><button data-k="3">3</button>
-      <button data-k="4">4</button><button data-k="5">5</button><button data-k="6">6</button>
-      <button data-k="7">7</button><button data-k="8">8</button><button data-k="9">9</button>
-      <span></span><button data-k="0">0</button><button data-k="clear" class="clear">Clear</button>
+<!-- ===== 3. LAUNCH ===== -->
+<section id="s-launch" class="screen">
+  <div id="count" class="count">3</div>
+  <p id="launch-txt" class="launch-txt">Engines ready…</p>
+</section>
+
+<!-- ===== 4. STAR REVEAL ===== -->
+<section id="s-birth" class="screen">
+  <canvas id="birth" aria-hidden="true"></canvas>
+  <p id="birth-cap" class="birth-cap"></p>
+  <button id="begin-btn" class="glow-btn begin" hidden>Begin the journey ✦</button>
+</section>
+
+<!-- ===== 5. MAIN ===== -->
+<div id="s-main" hidden>
+
+  <!-- flight through memories -->
+  <section id="flight">
+    <div class="stage" id="stage">
+      <div class="world" id="world"></div>
+      <div class="hud">
+        <div class="progress"><i id="progress"></i></div>
+        <p class="fly-cue" id="fly-cue">scroll to fly <span>↓</span></p>
+        <button class="pill" id="autofly">▶ Auto-fly</button>
+      </div>
     </div>
-  </div>
-</section>
-
-<!-- ============ 4. LOADING ============ -->
-<section id="screen-loading" class="screen">
-  <div class="wreath" id="wreath"></div>
-  <p class="loading-txt serif">Preparing your surprise…</p>
-</section>
-
-<!-- ============ 5. MAIN ============ -->
-<main id="screen-main" class="screen">
-
-  <header class="hero" id="top">
-    <p class="eyebrow">Poush 4</p>
-    <h1 class="script hero-title">Happy <span id="age-ord">15th</span><br>Birthday,<br><span class="hero-name" id="hero-name">Dalleiii</span></h1>
-    <p class="sub serif">The day the world got its sweetest smile.</p>
-    <a class="scroll-cue" href="#moments" aria-label="Scroll down">
-      <span>scroll down</span><svg viewBox="0 0 24 24" width="22" height="22"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-    </a>
-  </header>
-
-  <section class="block" id="moments">
-    <h2 class="script sec-title reveal">Our little moments</h2>
-    <p class="sec-sub serif reveal">Tap a photo to see it closer.</p>
-    <div class="wall" id="wall"></div>
   </section>
 
-  <section class="block" id="videos">
-    <h2 class="script sec-title reveal">Moving memories</h2>
-    <p class="sec-sub serif reveal">Press play, sweetheart.</p>
-    <div class="vids" id="vids"></div>
-  </section>
-
-  <section class="block" id="letter-block">
-    <h2 class="script sec-title reveal">A letter, just for you</h2>
-    <button class="envelope reveal" id="envelope" aria-label="Open the letter">
-      <span class="env-back"></span>
-      <span class="env-flap"></span>
-      <span class="env-front"></span>
-      <span class="seal">♥</span>
-      <span class="env-tap">tap to open</span>
-    </button>
+  <!-- letter -->
+  <section class="block" id="transmission">
+    <p class="tag reveal">◉ INCOMING TRANSMISSION</p>
+    <h2 class="script sec-title reveal">A message from <span id="t-him">Angry Bird</span></h2>
+    <button class="glow-btn reveal" id="receive">Receive message ✦</button>
+    <div class="signal" id="signal" hidden><span></span><span></span><span></span><span></span><span></span><em>decoding…</em></div>
     <article class="letter" id="letter" hidden>
       <div class="letter-text" id="letter-text"></div>
       <button class="skip" id="letter-skip" type="button">tap to show all</button>
     </article>
   </section>
 
+  <!-- game -->
   <section class="block" id="game-block">
-    <h2 class="script sec-title reveal">Catch my heart</h2>
-    <p class="sec-sub serif reveal">Every heart you catch holds a secret message for you.</p>
-    <div class="game reveal" id="game">
-      <div class="game-hud"><span>Hearts caught: <b id="score">0</b></span></div>
-      <div class="game-field" id="field"></div>
-      <div class="game-msg" id="game-msg" aria-live="polite"></div>
-      <button class="soft-btn game-start" id="game-start">Start catching 💗</button>
+    <h2 class="script sec-title reveal">Light up my stars</h2>
+    <p class="sec-sub reveal">Twelve stars are waiting for you. Touch them one by one.</p>
+    <div class="constellation reveal" id="const">
+      <svg id="const-svg" viewBox="0 0 100 100" aria-label="Constellation game"></svg>
+      <div class="const-name" id="const-name">Dalleiii</div>
     </div>
+    <div class="msg-card" id="star-msg" aria-live="polite">Tap a glowing star ✦</div>
+    <p class="const-meta"><b id="lit">0</b> / 12 stars lit</p>
+    <button class="glow-btn" id="const-reset" hidden>Play again with new messages ↻</button>
   </section>
 
-  <footer class="finale" id="finale">
-    <p class="together reveal" id="together" hidden></p>
-    <h2 class="script finale-title reveal">I will always love you</h2>
-    <p class="serif finale-sub reveal">Happy Birthday, <span id="fin-name">Dalleiii</span>.</p>
-    <p class="script from reveal">Forever yours, <span id="fin-him">Angry Bird</span></p>
-    <button class="soft-btn reveal" id="replay">Back to the top ↑</button>
-  </footer>
-</main>
+  <!-- finale -->
+  <section class="block" id="finale">
+    <h2 class="script sec-title reveal">Make a wish</h2>
+    <p class="sec-sub reveal">Close your eyes, wish for something beautiful, then tap the candles.</p>
+    <button class="cake reveal" id="cake-btn" aria-label="Blow out the candles"><svg id="cake" viewBox="0 0 260 250" aria-hidden="true"></svg></button>
+    <p class="wish-hint" id="wish-hint">tap to blow out the candles</p>
 
-<div id="rose-layer" aria-hidden="true"></div>
-<div id="confetti" aria-hidden="true"></div>
+    <div id="after" hidden>
+      <h2 class="script big-final">Happy Birthday,<br><span id="f-name">Dalleiii</span></h2>
+      <p class="final-sub">May every wish you make find its way to you.</p>
 
+      <div class="cert" id="cert">
+        <div class="cert-in">
+          <p class="cert-top">✦ OFFICIAL STAR CERTIFICATE ✦</p>
+          <p class="cert-small">A star in the universe has been named</p>
+          <h3 class="script cert-name" id="c-name">Dalleiii</h3>
+          <dl>
+            <div><dt>Registered</dt><dd id="c-date">Poush 4</dd></div>
+            <div><dt>Catalog no.</dt><dd id="c-cat">DAL-0904</dd></div>
+            <div><dt>Brightness</dt><dd id="c-bri">Infinite</dd></div>
+            <div><dt>Distance</dt><dd id="c-dis">0 km</dd></div>
+            <div><dt>Discovered by</dt><dd id="c-him">Angry Bird</dd></div>
+            <div><dt>Owner</dt><dd id="c-own">forever</dd></div>
+          </dl>
+          <span class="cert-seal">✦</span>
+        </div>
+      </div>
+
+      <p class="together" id="together" hidden></p>
+      <p class="script from">Forever yours,<br><span id="f-him">Angry Bird</span></p>
+      <button class="glow-btn" id="replay">Fly it again ✦</button>
+    </div>
+  </section>
+</div>
+
+<!-- photo viewer -->
 <div id="lightbox" class="lightbox" hidden>
   <button class="lb-close" id="lb-close" aria-label="Close">×</button>
   <button class="lb-nav prev" id="lb-prev" aria-label="Previous">‹</button>
@@ -176,10 +138,18 @@
   <div class="lb-count" id="lb-count"></div>
 </div>
 
-<button id="music-btn" class="music-btn" hidden aria-label="Play or pause music">♪</button>
+<!-- video viewer -->
+<div id="vidmodal" class="lightbox vidmodal" hidden>
+  <button class="lb-close" id="vm-close" aria-label="Close">×</button>
+  <figure class="lb-fig"><video id="vm-video" controls playsinline></video><figcaption id="vm-cap"></figcaption></figure>
+</div>
 
-<noscript><p style="padding:2rem;text-align:center">Please turn on JavaScript to open your gift 💝</p></noscript>
+<button id="sound-btn" class="sound-btn" hidden aria-label="Sound on or off">♪</button>
+<canvas id="fw" aria-hidden="true"></canvas>
+<div id="confetti" aria-hidden="true"></div>
+<div id="flash" aria-hidden="true"></div>
 
+<noscript><p style="padding:2rem;text-align:center;color:#fff">Please turn on JavaScript to open your gift 💝</p></noscript>
 <script src="js/hash.js"></script>
 <script src="js/config.js"></script>
 <script src="js/app.js"></script>
