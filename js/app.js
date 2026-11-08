@@ -214,11 +214,14 @@
   var IMG_EXT = ['.jpg', '.jpeg', '.png', '.webp', '.JPG', '.JPEG', '.PNG'];
   var VID_EXT = ['.mp4', '.webm', '.MP4', '.mov', '.MOV'];
   /* Accepts "photo-01" (looked up in the assets folder, endings tried automatically),
-     "IMG_123.jpg" (exact file in the assets folder) or "surprise/IMG_123.jpg" (any path from the site root). */
+     "IMG_123.jpg" (exact file in the assets folder), "./IMG_123.jpg" (exact file at the top of the repo)
+     or "myfolder/IMG_123.jpg" (any path from the top of the repo). */
   var HAS_EXT = /\.(jpe?g|png|webp|gif|mp4|webm|mov)$/i;
   function candidates(file, folder, exts) {
-    file = String(file).replace(/^\.?\//, '');
-    var base = file.indexOf('/') >= 0 ? file : folder + file;
+    file = String(file);
+    var atRoot = /^\.?\//.test(file);          // "./x.jpg" or "/x.jpg" = top of the repo
+    file = file.replace(/^\.?\//, '');
+    var base = (atRoot || file.indexOf('/') >= 0) ? file : folder + file;
     if (HAS_EXT.test(base)) return [base];
     return exts.map(function (e) { return base + e; });
   }
