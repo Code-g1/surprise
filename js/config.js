@@ -1,7 +1,7 @@
 /* ============================================================
    ✏️  THIS IS THE ONLY FILE YOU NEED TO EDIT  ✏️
-   Change names, captions, the letter and the sweet messages here.
-   Keep the quote marks "" and commas , exactly as they are.
+   Keep the quote marks "" and the commas , exactly as they are.
+   {name} = her name, {him} = your name, {age} = 15, {ordinal} = 15th
    ============================================================ */
 
 window.GIFT = {
@@ -12,64 +12,77 @@ window.GIFT = {
   age: 15,
   birthday: "Poush 4",
 
-  /* ---------- Passcode (currently 0904) ----------
-     To change it: open tools/make-passcode.html in your browser,
-     type the new 4 digits, and paste the result below.            */
+  /* ---------- Passcode (currently 0904) ---------- */
   salt: "dalleiii-love:",
   passcodeHash: "1659c62c27ae52",
-  hint: "Hint: our special four numbers 💕",
+  hint: "Hint: our four special numbers 💕",
 
-  /* Optional: the day you became a couple, like "2025-03-14" (year-month-day).
-     Leave it as "" to hide the "days together" counter.                       */
+  /* Optional: the day you became a couple, like "2025-03-14".
+     Leave "" to hide the "days together" line.               */
   togetherSince: "",
 
-  /* ---------- Photos ----------
-     Upload photos to  assets/photos/  and name them
-     photo-01.jpg, photo-02.jpg ... photo-12.jpg
-     (.jpg .jpeg .png .webp all work automatically).
-     Write a caption between the quotes whenever you want one.            */
-  photos: [
-    { file: "IMG_20261107_220442_427_2.jpg", caption: "" },
-    { file: "IMG_20261107_220443_260_9.jpg", caption: "" },
-    { file: "IMG_20261107_220450_882.jpg", caption: "" },
-    { file: "IMG_20261107_220456_121.jpg", caption: "" },
-    { file: "IMG_20261107_220503_066.jpg", caption: "" },
-    { file: "IMG_20261107_220507_728.jpg", caption: "" },
-    { file: "IMG_20261107_220509_110.jpg", caption: "" },
-    { file: "IMG_20261107_220510_726.jpg", caption: "" },
-    { file: "IMG_20261107_220512_073.jpg", caption: "" },
-    { file: "IMG_20261107_220513_353.jpg", caption: "" },
-    { file: "IMG_20261107_220514_547.jpg", caption: "" },
-    { file: "IMG_20261107_220516_638.jpg", caption: "" }
+  /* ---------- Opening lines (typed one by one on a black screen) ---------- */
+  introLines: [
+    "Hey, {name}.",
+    "I built something.",
+    "It took late nights, and one very big secret.",
+    "There is only one copy in the whole universe… and it's yours."
   ],
 
-  /* While true, empty frames show for photos/videos you haven't uploaded yet.
-     When everything is uploaded this makes no difference.
-     Set to false if you upload fewer than 12 photos and want no empty frames. */
+  /* ---------- Lines under the star reveal ---------- */
+  birthLines: [
+    "Out of billions of stars…",
+    "…there is one I could never lose sight of.",
+    "You make my whole sky glow.",
+    "Happy {ordinal} birthday, my love."
+  ],
+  birthFinal: "Poush 4 · the day the universe got its brightest star",
+
+  /* ---------- Chapters shown while she flies through your photos ----------
+     1st-3rd appear before each group of 4 photos, the 4th before the videos,
+     "endNote" appears at the very end of the flight.                         */
+  chapters: [
+    { tag: "Chapter One",   text: "Every photo is a tiny universe with the two of us inside." },
+    { tag: "Chapter Two",   text: "Some days with you felt like they were made of stardust." },
+    { tag: "Chapter Three", text: "And somehow, it keeps getting even better." },
+    { tag: "Chapter Four",  text: "Some moments were too alive for a photo…" }
+  ],
+  endNote: "One more thing… keep flying. There's a message waiting for you.",
+
+  /* ---------- Photos ----------
+     Upload to  assets/photos/  as  photo-01.jpg … photo-12.jpg
+     (.jpeg .png .webp also work). Write a caption between the quotes, or leave "". */
+  photos: [
+    { file: "photo-01", caption: "" },
+    { file: "photo-02", caption: "" },
+    { file: "photo-03", caption: "" },
+    { file: "photo-04", caption: "" },
+    { file: "photo-05", caption: "" },
+    { file: "photo-06", caption: "" },
+    { file: "photo-07", caption: "" },
+    { file: "photo-08", caption: "" },
+    { file: "photo-09", caption: "" },
+    { file: "photo-10", caption: "" },
+    { file: "photo-11", caption: "" },
+    { file: "photo-12", caption: "" }
+  ],
+
+  /* true = empty frames for files you haven't uploaded yet (good while testing).
+     false = only photos/videos that really exist are shown.                     */
   showPlaceholders: true,
 
-  /* ---------- Videos ----------
-     Upload to  assets/videos/  as  video-01.mp4  and  video-02.mp4  */
+  /* ---------- Videos: upload to assets/videos/ as video-01.mp4 and video-02.mp4 ---------- */
   videos: [
-    { file: "Messenger_creation_70D0B9AA-4118-44A8-AA58-2FA32AEAF44A.mp4", title: "Moment one", caption: "" },
-    { file: "VID_20261107_082005_115.mp4", title: "Moment two", caption: "" }
+    { file: "video-01", title: "Moment one", caption: "" },
+    { file: "video-02", title: "Moment two", caption: "" }
   ],
 
-  /* ---------- Music (optional) ----------
-     Upload a song as  assets/music/song.mp3  and a little music
-     button appears by itself. No file = no button.            */
+  /* ---------- Music (optional): upload  assets/music/song.mp3 ---------- */
   music: "assets/music/song",
 
-  /* ---------- Intro lines (words between *stars* get highlighted) ---------- */
-  introQuotes: [
-    "In your *smile*, I found my *peace*.",
-    "With you, every day feels like a *celebration*.",
-    "You are my *favorite* person in the whole *world*."
-  ],
-
   /* ---------- Your letter ----------
-     ⚠️ THIS IS SAMPLE TEXT. Replace everything between the backticks ` `
-     with your own words. Press Enter twice to start a new paragraph. */
+     ⚠️ THIS IS SAMPLE TEXT. Replace everything between the backticks ` `.
+     Press Enter twice for a new paragraph.                              */
   letter: `My dearest Dalleiii,
 
 [Write your own letter here. Tell her what she means to you, your favorite memory together, and what you wish for her this year.]
@@ -79,12 +92,10 @@ Happy 15th birthday, my love. I'm so lucky to be yours.
 Forever yours,
 Angry Bird`,
 
-  /* ---------- Game: messages inside the falling hearts ----------
-     {name} becomes her name, {him} becomes your name, {age} her age (15),
-   {ordinal} her age as "15th".
-     Add as many lines as you like. They show in random order and
-     none repeats until she has seen them all.                       */
-  gameMessages: [
+  /* ---------- Game: messages inside the 12 stars ----------
+     Every time she plays, the stars show different messages. None repeats
+     until she has seen them all. Add as many as you like.                 */
+  starMessages: [
     "{name}, you're my favorite hello and my hardest goodbye.",
     "Every time you smile, my whole world gets brighter.",
     "You make ordinary days feel like little celebrations.",
@@ -143,15 +154,30 @@ Angry Bird`,
     "Hold on to this: you are enough, exactly as you are.",
     "I saved the biggest piece of my heart for you.",
     "Every moment with you is a memory I treasure.",
-    "Please never forget how loved you are."
+    "Please never forget how loved you are.",
+    "Of all the stars I've ever seen, you're the only one I'd wish on.",
+    "You're my north star, {name}. I always find my way back to you.",
+    "In a universe this big, I'm grateful our paths crossed.",
+    "You light up my sky even on the darkest nights."
   ],
 
-  /* Rare golden hearts (every 7th heart she catches) */
-  goldenMessages: [
-    "🌟 Golden heart! You are the best thing that ever happened to me, {name}.",
-    "🌟 Golden heart! Wish granted: one forever hug from your {him}.",
-    "🌟 Golden heart! Close your eyes, make a birthday wish… I hope it's us. 💕",
-    "🌟 Golden heart! Here's to {age} beautiful years of the world having you.",
-    "🌟 Golden heart! Happy Birthday, {name}. I love you more than words can say."
-  ]
+  /* Rare shooting stars that cross the sky (tap them for a bonus wish) */
+  wishMessages: [
+    "🌠 A wish for you: may every dream you have find its way to you.",
+    "🌠 Wish granted: one forever hug from your {him}.",
+    "🌠 I wished on this star, and I wished for you. Again.",
+    "🌠 May this year bring you everything that makes you smile.",
+    "🌠 My wish never changes: more days with you, {name}."
+  ],
+
+  /* Shown when all 12 stars are lit */
+  constellationFinale: "Twelve stars, one heart. Every one of them leads back to you, {name}. 💖",
+
+  /* ---------- Star certificate (final screen) ---------- */
+  certificate: {
+    catalog: "DAL-0904",
+    brightness: "Infinite",
+    distance: "0 km from {him}'s heart",
+    owner: "{name}, forever and always"
+  }
 };
