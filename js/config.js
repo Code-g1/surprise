@@ -56,7 +56,7 @@ window.GIFT = {
     { file: "./IMG_20261107_220503_066.jpg", caption: "" },
     { file: "./IMG_20261107_220512_073.jpg", caption: "" },
     { file: "./IMG_20261107_220509_110.jpg", caption: "" },
-    { file: "./IMG_20261107_220513_353.jpg", caption: "" },
+    { file: "./IMG_20261107_220507_728.jpg", caption: "" },
     { file: "./IMG_20261107_220510_726.jpg", caption: "" },
     { file: "./IMG_20261107_220513_353.jpg", caption: "" },
     { file: "./IMG_20261107_220443_260_9.jpg", caption: "" },
