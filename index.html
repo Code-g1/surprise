@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#1b0612">
+<meta name="robots" content="noindex, nofollow">
+<title>A secret ✉</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Great+Vibes&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="bg bg-dark" aria-hidden="true"></div>
+<div class="bg bg-light" aria-hidden="true"></div>
+<canvas id="bg" aria-hidden="true"></canvas>
+
+<!-- ============ 1. MYSTERY GATE ============ -->
+<section id="s-gate" class="screen active">
+  <p id="gate-line" class="gate-line"></p>
+  <button id="seal-btn" class="env-wrap" hidden aria-label="Touch the seal">
+    <div class="env3d" id="env3d">
+      <div class="env-body">
+        <span class="e-back"></span>
+        <span class="e-letter"></span>
+        <span class="e-front"></span>
+        <span class="e-flap"></span>
+        <span class="wax"><b>♥</b></span>
+      </div>
+    </div>
+    <span class="touch" id="touch-txt">touch the seal</span>
+  </button>
+</section>
+
+<!-- ============ 2. BREAK THE SEAL ============ -->
+<section id="s-lock" class="screen">
+  <div class="lock-seal" id="lock-seal">
+    <span class="ring"></span>
+    <span class="half hl"><b>♥</b></span>
+    <span class="half hr"><b>♥</b></span>
+    <span class="glow"></span>
+  </div>
+  <h2 class="script lock-title" id="lock-title">Break the seal</h2>
+  <p class="lock-sub" id="lock-sub">Only she knows the four numbers…</p>
+  <div class="slots" id="slots"><i></i><i></i><i></i><i></i></div>
+  <p class="lock-msg" id="lock-msg">&nbsp;</p>
+  <div class="keypad" id="keypad">
+    <button data-k="1">1</button><button data-k="2">2</button><button data-k="3">3</button>
+    <button data-k="4">4</button><button data-k="5">5</button><button data-k="6">6</button>
+    <button data-k="7">7</button><button data-k="8">8</button><button data-k="9">9</button>
+    <span></span><button data-k="0">0</button><button data-k="clear" class="clear">clear</button>
+  </div>
+</section>
+
+<!-- ============ 3. THE REVEAL (3D heart + 3D words) ============ -->
+<section id="s-stage" class="screen">
+  <canvas id="heart" aria-label="A 3D heart you can spin"></canvas>
+  <div class="stage-grid">
+    <div class="words words-top" id="words-top"></div>
+    <div class="heart-slot" id="heart-slot"></div>
+    <div class="words words-name" id="words-name"></div>
+    <p class="stage-cap" id="stage-cap"></p>
+    <p class="tap-msg" id="tap-msg" aria-live="polite"></p>
+    <button class="rose-btn open-btn" id="open-btn" hidden>Open my gift ✦</button>
+  </div>
+</section>
+
+<!-- ============ 4. MAIN ============ -->
+<main id="s-main" hidden>
+
+  <section class="block" id="album">
+    <p class="tag reveal">✦ OUR MEMORIES ✦</p>
+    <h2 class="script sec-title reveal">Every moment with you</h2>
+    <p class="sec-sub reveal">Tap any photo to see it up close.</p>
+    <div class="grid" id="grid"></div>
+  </section>
+
+  <section class="block" id="letter-block">
+    <p class="tag reveal">✦ A LETTER ✦</p>
+    <h2 class="script sec-title reveal">Words from my heart</h2>
+    <button class="envelope reveal" id="envelope" aria-label="Open the letter">
+      <span class="en-back"></span>
+      <span class="en-paper"></span>
+      <span class="en-front"></span>
+      <span class="en-flap"></span>
+      <span class="en-seal">♥</span>
+      <span class="en-tap">tap to open</span>
+    </button>
+    <article class="letter" id="letter" hidden>
+      <svg class="sprig sprig-a" viewBox="0 0 100 100" aria-hidden="true"><use href="#sprig"/></svg>
+      <svg class="sprig sprig-b" viewBox="0 0 100 100" aria-hidden="true"><use href="#sprig"/></svg>
+      <div class="letter-text" id="letter-text"></div>
+      <button class="skip" id="letter-skip" type="button">tap to show all</button>
+    </article>
+  </section>
+
+  <section class="block" id="game-block">
+    <p class="tag reveal">✦ A LITTLE GAME ✦</p>
+    <h2 class="script sec-title reveal">Pluck a petal</h2>
+    <p class="sec-sub reveal">Every petal holds something sweet I need you to know.</p>
+    <div class="flower-wrap reveal" id="flower-wrap">
+      <svg id="flower" viewBox="0 0 200 290" aria-label="Flower with petals to pluck"></svg>
+    </div>
+    <div class="msg-card" id="petal-msg" aria-live="polite">Tap a petal ✦</div>
+    <p class="const-meta"><b id="petals-left">12</b> petals left</p>
+    <button class="rose-btn" id="regrow" hidden>Grow a new flower ↻</button>
+  </section>
+
+  <section class="block" id="finale">
+    <p class="tag reveal">✦ A PROMISE ✦</p>
+    <h2 class="script sec-title reveal">What I promise you</h2>
+    <div class="scroll reveal" id="scroll"><ol id="promises"></ol></div>
+    <button class="seal-press reveal" id="seal-it" aria-label="Press the wax seal">
+      <span class="sp-ring"></span><span class="sp-wax"><b>♥</b></span>
+      <span class="sp-txt" id="sp-txt">press to seal it with love</span>
+    </button>
+
+    <div id="after" hidden>
+      <h2 class="script big-final">Happy Birthday,<br><span id="f-name"></span></h2>
+      <p class="final-sub" id="final-sub"></p>
+      <p class="together" id="together" hidden></p>
+      <p class="script from">Forever yours,<br><span id="f-him"></span></p>
+      <button class="rose-btn" id="replay">Back to the top ↑</button>
+    </div>
+  </section>
+</main>
+
+<!-- photo viewer -->
+<div id="lightbox" class="lightbox" hidden>
+  <button class="lb-close" id="lb-close" aria-label="Close">×</button>
+  <button class="lb-nav prev" id="lb-prev" aria-label="Previous">‹</button>
+  <figure class="lb-fig"><img id="lb-img" alt=""><figcaption id="lb-cap"></figcaption></figure>
+  <button class="lb-nav next" id="lb-next" aria-label="Next">›</button>
+  <div class="lb-bar"><span id="lb-count"></span><button id="lb-play" class="lb-play" type="button">▶ slideshow</button></div>
+</div>
+
+<!-- video viewer -->
+<div id="vidmodal" class="lightbox" hidden>
+  <button class="lb-close" id="vm-close" aria-label="Close">×</button>
+  <figure class="lb-fig"><video id="vm-video" controls playsinline></video><figcaption id="vm-cap"></figcaption></figure>
+</div>
+
+<button id="sound-btn" class="sound-btn" hidden aria-label="Sound on or off">♪</button>
+<canvas id="fw" aria-hidden="true"></canvas>
+<div id="confetti" aria-hidden="true"></div>
+<div id="flash" aria-hidden="true"></div>
+
+<!-- reusable drawings -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="sprig" viewBox="0 0 100 100">
+      <g fill="none" stroke="#b98a7a" stroke-width="1.6" stroke-linecap="round">
+        <path d="M8 94 C 30 70, 50 50, 90 8"/>
+        <path d="M22 78 c-10 -2 -14 -12 -10 -20 c10 2 14 10 10 20z" fill="#e9b9c4" stroke="#d48aa0"/>
+        <path d="M38 62 c-11 0 -16 -9 -13 -18 c10 0 16 8 13 18z" fill="#f3cdd5" stroke="#d48aa0"/>
+        <path d="M52 48 c10 -3 14 -12 10 -19 c-10 3 -14 11 -10 19z" fill="#e9b9c4" stroke="#d48aa0"/>
+        <path d="M66 33 c10 -2 14 -11 11 -18 c-10 2 -14 10 -11 18z" fill="#f3cdd5" stroke="#d48aa0"/>
+        <circle cx="90" cy="8" r="3.4" fill="#e6c07b" stroke="none"/>
+      </g>
+    </symbol>
+  </defs>
+</svg>
+
+<noscript><p style="padding:2rem;text-align:center;color:#fff">Please turn on JavaScript to open this 💝</p></noscript>
+<script src="js/seal.js"></script>
+<script src="js/fx.js"></script>
+<script src="js/heart3d.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
