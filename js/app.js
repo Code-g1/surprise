@@ -10,7 +10,7 @@
 
   var GATE_LINES = [
     'Something was left here, for someone…',
-    'written for only one person in the whole world.',
+    'Written for only one person in the whole world.',
     "If it's you… you already know the four numbers."
   ];
   var HINT = 'Hint: four numbers that only we two know 💕';
@@ -90,7 +90,7 @@
         wrong++; Snd.bad(); paint('bad');
         lockMsg.textContent = wrong >= 2 ? HINT : 'The seal stays closed… only the right heart can open it.';
       } else if (m === 'nosecret') {
-        paint('bad'); lockMsg.textContent = 'This seal only opens from the exact private link he sent you 💌. Please open that link again.';
+        paint('bad'); lockMsg.textContent = 'You might have guessed or known the password by accident but you are not the person this world was made for.';
       } else if (m === 'insecure') {
         paint('bad'); lockMsg.textContent = 'Please open this from the https:// website link, not from a saved file.';
       } else {
